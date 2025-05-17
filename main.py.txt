@@ -1,0 +1,17 @@
+import time
+from datetime import datetime
+
+USERNAME = "MyFireFaucet"
+PASSWORD = "9926#926"
+
+def claim_trx():
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    result = f"[{now}] Claimed TRX for user: {USERNAME}"
+    print(result)
+    with open("claim_log.txt", "a") as f:
+        f.write(result + "\n")
+
+if __name__ == "__main__":
+    while True:
+        claim_trx()
+        time.sleep(600)
